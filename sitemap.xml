@@ -3,39 +3,39 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://www.example.com/contact/</loc>
+    <loc>https://ma-ue.github.io/contact/</loc>
     <lastmod>2017-11-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.example.com/post/%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB/</loc>
+    <loc>https://ma-ue.github.io/post/%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB/</loc>
     <lastmod>2017-11-15T19:06:46+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.example.com/about/</loc>
+    <loc>https://ma-ue.github.io/about/</loc>
     <lastmod>2017-11-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.example.com/</loc>
+    <loc>https://ma-ue.github.io/</loc>
     <lastmod>2017-11-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.example.com/post/</loc>
+    <loc>https://ma-ue.github.io/post/</loc>
     <lastmod>2017-11-15T19:06:46+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.example.com/tags/</loc>
+    <loc>https://ma-ue.github.io/tags/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.example.com/topics/</loc>
+    <loc>https://ma-ue.github.io/topics/</loc>
     <priority>0</priority>
   </url>
   

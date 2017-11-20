@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on HAMPOT</title>
+    <link>https://www.example.com/post/</link>
+    <description>Recent content in Posts on HAMPOT</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>&amp;copy; 2017. All rights reserved.</copyright>
+    <lastBuildDate>Wed, 15 Nov 2017 19:06:46 +0900</lastBuildDate>
+    
+	<atom:link href="https://www.example.com/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>はじめに</title>
+      <link>https://www.example.com/post/%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB/</link>
+      <pubDate>Wed, 15 Nov 2017 19:06:46 +0900</pubDate>
+      
+      <guid>https://www.example.com/post/%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB/</guid>
+      <description>はじめに このサイトは私のやったことやそこで得られた知見などをまとめたり，趣味について語ったりする場所として利用したいと思います.
+その結果として同じ興味をもつ人とつながりができたらよりいいかと思います.
+そういう意味でも気軽に連絡やコメントなどいただけると大変うれしいです.
+また，Githubやhugoなどのツールの練習の場としての役割も兼ねているので不具合や改善点などありましたら教えていただきたいです.
+よろしくお願いします.</description>
+    </item>
+    
+  </channel>
+</rss>

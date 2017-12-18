@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Intro on HAMPOT</title>
+    <link>https://ma-ue.github.io/tags/intro/</link>
+    <description>Recent content in Intro on HAMPOT</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>&amp;copy; 2017. All rights reserved.</copyright>
+    <lastBuildDate>Wed, 15 Nov 2017 19:06:46 +0900</lastBuildDate>
+    
+	<atom:link href="https://ma-ue.github.io/tags/intro/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>はじめに</title>
+      <link>https://ma-ue.github.io/post/%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB/</link>
+      <pubDate>Wed, 15 Nov 2017 19:06:46 +0900</pubDate>
+      
+      <guid>https://ma-ue.github.io/post/%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB/</guid>
+      <description>はじめに このサイトは私のやったことやそこで得られた知見などをまとめたり，趣味について語ったりする場所として利用したいと思います. その結果とし</description>
+    </item>
+    
+  </channel>
+</rss>

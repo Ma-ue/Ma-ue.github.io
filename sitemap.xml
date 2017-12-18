@@ -29,6 +29,12 @@
   </url>
   
   <url>
+    <loc>https://ma-ue.github.io/tags/intro/</loc>
+    <lastmod>2017-11-15T19:06:46+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://ma-ue.github.io/post/</loc>
     <lastmod>2017-12-18T19:00:02+09:00</lastmod>
     <priority>0</priority>
@@ -48,7 +54,7 @@
   
   <url>
     <loc>https://ma-ue.github.io/tags/</loc>
-    <lastmod>2017-12-18T19:00:02+09:00</lastmod>
+    <lastmod>2017-11-15T19:06:46+09:00</lastmod>
     <priority>0</priority>
   </url>
   

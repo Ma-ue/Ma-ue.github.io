@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.31.1" />
 
-  <title>ROSまでのみちのり &middot; HAMPOT</title>
+  <title>Hugoでサイトを立ち上げる &middot; HAMPOT</title>
 
   
   
@@ -211,7 +211,7 @@
 
 
 <div class="header">
-  <h1>ROSまでのみちのり</h1>
+  <h1>Hugoでサイトを立ち上げる</h1>
   <h2></h2>
 </div>
 <div class="content">
@@ -220,7 +220,7 @@
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>18 Dec 2017, 19:00</time>
+    <time>27 Dec 2017, 17:38</time>
   </div>
 
   
@@ -233,11 +233,11 @@
   <div>
     <i class="fa fa-tags fa-fw"></i>
     
-      <a class="post-taxonomy-tag" href="https://ma-ue.github.iotags/ros">ROS</a>&nbsp;&#47;
+      <a class="post-taxonomy-tag" href="https://ma-ue.github.iotags/hugo">Hugo</a>&nbsp;&#47;
     
-      <a class="post-taxonomy-tag" href="https://ma-ue.github.iotags/raspberry-pi">Raspberry Pi</a>&nbsp;&#47;
+      <a class="post-taxonomy-tag" href="https://ma-ue.github.iotags/website">website</a>&nbsp;&#47;
     
-      <a class="post-taxonomy-tag" href="https://ma-ue.github.iotags/travis-ci">Travis CI</a>
+      <a class="post-taxonomy-tag" href="https://ma-ue.github.iotags/github">Github</a>
     
   </div>
   
@@ -247,111 +247,84 @@
 
   
 
-<h1 id="経緯">経緯</h1>
+<h1 id="hugoで個人のページを作った-ここ">hugoで個人のページを作った(ここ)</h1>
 
-<p>ROSを使って物質的なマッピングと音響的なマッピングを同時に行うことを
-目的に，マイクロホンをラズパイマウスにくっつけて動かしたい．
-そこで上田先生の本(<a href="https://www.amazon.co.jp/dp/4822239292/ref=cm_sw_r_tw_dp_U_x_LAxnAbDKR5YNN">Amazon商品ページ</a>)を
-参考にしながら実装などを進めているが，つまずいてしまった点などまとめて今後使えるメモにしたいところ．</p>
+<p>Githubをきちんと使えるようになりたいという願望や個人のサイトを持ちたいという願望が合わさって，<br />
+現在のwebサイトができました．</p>
 
-<h1 id="環境">環境</h1>
+<p>幸運なことに同じような形で自分のページを持っている人がいたり，ネット上にもノウハウが多く転がっていたので助かりました．
+その中でも自分が特に詰まった点や，他のノウハウを載せているページには見つけられなかった注意点など紹介したいと思います．</p>
 
-<ul>
-<li>Machine:  Raspberry Pi3 &amp; RaspberryPiMouse V2</li>
-<li>Machine OS:   Ubuntu Server 16.04 LTS</li>
-<li>Host OS:  Ubuntu 16.04 LTS (&amp;El Capitan)</li>
-</ul>
-
-<h1 id="ros導入およびテストで詰まったところ">ROS導入およびテストで詰まったところ</h1>
+<h2 id="もくじ">もくじ</h2>
 
 <ol>
-<li>reboot is needed</li>
-<li>rosdep init</li>
-<li>pip(in Travis CI)</li>
+<li>gh-pages ブランチが不要</li>
+<li>継続的にページを更新するために</li>
+<li>別PCに編集する環境を作る</li>
 </ol>
 
-<h2 id="reboot-is-needed">reboot is needed</h2>
+<h1 id="gh-pages-ブランチが不要">gh-pages ブランチが不要</h1>
 
-<dl>
-<dt>症状</dt>
-<dd>Fixing recursive fault but reboot is needed! と表示されて立ち上がらない</dd>
-<dt>対策</dt>
-<dd>必要なだけ再起動してあげる</dd>
-<dt>原因</dt>
-<dd>不明（わかる方いらしたら教えてください）</dd>
-</dl>
+<p>いくつかのノウハウを載せているページを参考にしながらこのHAMPOTを立ち上げましたが，
+それらの多くはgh-pagesブランチを切ってそこにpushするように書かれていました．
+しかし今ではGithub Pagesもアップデートされ，その手続きは不要となりました．
+(gh-pagesブランチを使っても正常に機能するそうです．)</p>
 
-<p>今でもそこそこな頻度で起こる問題．
-表示された内容を日本語訳すると「再帰的な問題を治しているのだけど，再起動してほしいんだ」のような感じ．<br />
-言われた通り再起動するがこれが2,3回では済まないので何かOS入れる際に失敗したのかと思い何度も入れなおす結果に．
-結局，たくさん再起動することで治るので問題ない（？）</p>
+<h1 id="継続的にページを更新する">継続的にページを更新する</h1>
 
-<p>もともと別の用途で使っていたRasbianの入ったmicroSDでROS導入しようとし，この問題にぶつかり，OSが原因なのでは？
-と思い参考にした本でも使っているUbuntu Serverに変更したという情けない経緯があります．
-なのでいまだにOSのせいなのか不明です．</p>
+<p>静的サイトを立ち上げられるよ！で終わる人もいれば，さくらサーバやGithub Pagesで公開できるよ！
+で終わる人もいますが，それではブログになりません．</p>
 
-<h2 id="rosdep-init">rosdep init</h2>
+<p>ブログでないにしても簡単に更新できるようにする必要があります．</p>
 
-<dl>
-<dt>症状</dt>
-<dd>rosdep init が実行されない</dd>
-<dt>対策</dt>
-<dd>学校でやろうとしない</dd>
-<dt>原因</dt>
-<dd>プロキシーサーバを使用するとアクセスができない</dt>
-</dl>
+<h2 id="ビルドと公開を同時に">ビルドと公開を同時に</h2>
 
-<p>依存関係含めたインストールやアップデートなどがおこなえる<code>rosdep</code>コマンド．
-インストール後に初期化が必要なので，必ず<code>sudo rosdep init</code>は入力することになるかと思います．
-しかし，<code>rosdep init</code>はproxy環境下ではエラーが起こることが分かっています．
-実際に実行してみると</p>
+<p>hugoでサイトのビルドができ，publicフォルダが生成（更新）されます．このディレクトリをGithubにpushすることで，ページが更新されます．
+この一連の流れをシェルスクリプトにしてしまうとかなり幸せになれると思います．</p>
 
-<pre><code>cannot download default sources list from:  
-https://raw.github.com/ros/rosdistro/master/rosdep/sources.list.d/20-default.list  
-Website may be down.  
+<pre><code>#!/bin/bash
+rm -rf public/post/*
+hugo
+cd public
+git add .
+git commit -m -&quot;update pages&quot;
+git push origin master
 </code></pre>
 
-<p>と表示されます．しかしウェブブラウザでそのURLにアクセスすると正常に表示することができます．
-ネット上では<code>sudo -E rosdep init</code>
-(sudoの-Eオプション)でできるという情報が転がっていましたが，
-私の環境下ではうまくいきませんでした．
-自宅にラズパイを持ち帰り，自宅のネットワークに繋いだ状態で<code>sudo rosdep init</code>を実行したところ
-無事動いたので，やはりネットワークが原因だと考えられます．</p>
+<h1 id="別pcに編集する環境を作る">別PCに編集する環境を作る</h1>
 
-<h2 id="pip-in-travis-ci">pip (in Travis CI)</h2>
+<p>今回はこれがメインだったりします．<br />
+最初にMacBookProでhugoを導入してサイトを作っていたのがMBPが諸事情により使えなくなってしまったので，<br />
+Ubuntuの入ったPCで引き続き更新しようとしたところ，思いの外詰まってしまいました．</p>
 
-<dl>
-<dt>症状</dt>
-<dd>pip install が拒否される</dd>
-<dt>対策</dt>
-<dd>pip install --user で実行</dd>
-<dt>原因</dt>
-<dd>権限など</dt>
-</dl>
+<p>やったことは改めて環境構築(hugoのインストール)とbitbucketを用いた環境の引き継ぎです．<br />
+Ubuntuでのinstallには<code>apt-get</code>せよといろんなところに書いてありますが，バージョンが古いせいかうまく動作しなかったです．
+（具体的にはsafeHTMLAttrが定義されていないとかでhugoコマンドによるビルドが通らない状況に陥りました．）<br />
+そのため公式では<code>snap</code>を使うように指示していますし，
+コマンドラインが苦手な人でもhugoのGithubページ(<a href="https://github.com/gohugoio/hugo/releases">hugo Releases</a>)から直接ダウンロードしてきて，これを利用する方法もあります．</p>
 
-<p>上で述べた本を進めていくとTravis CI という継続的インテグレーションツールを用いたROSのテストを行う内容になります．
-そのテストを行うにあたり環境を構築する必要があり，その最中にpipコマンドを用いてインストールをする部分があります．
-ここで詰まってしまいましたが，吐かれたエラー文を見ると<code>Permission denied</code>とあったので権限などの問題のようです．
-<code>--user</code>をつけることによってユーザディレクトリにインストールされるため回避できるようになったと思われます．</p>
+<p>GitHubに上がっているのはpublicフォルダだけなのでこれをpullしてきてもそのまま引き継ぎができません．<br />
+そこで環境そのものを引っ越しするために無料でプライベートのリポジトリが作れるbitbucketを用いました．<br />
+使い方はほとんどGithubと同じで，元の環境でpushして引き継ぎしたいPC側でcloneすればOKです．<br />
+自分は<code>hugo new site hogehoge</code>を先にしておいて，cloneしたディレクトリから適宜必要なものを
+copyする方法で引き継ぎを行いました．</p>
 
 <h1 id="まとめ">まとめ</h1>
 
-<p>細かいところでつまずくと次へのモチベーションが結構下がるけれども，英語のドキュメントなどを探して
-なんとか克服する．ただそれだけで妙に達成感あるのが危険だといつも思う．
-今後も何か見つけたらここにあげたいと思います．何か訂正点や追記すべき事項などありましたらContactにお願いします．</p>
+<p>Hugo + Githubで自分のサイトを作るだけで結構いろいろなことを学べる機会になっている気がする．それと近々ハムスターに関連する記事をあげたい．</p>
 
 
   
 <div class="prev-next-post pure-g">
   <div class="pure-u-1-24" style="text-align: left;">
     
-    <a href="https://ma-ue.github.io/post/%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB/"><i class="fa fa-chevron-left"></i></a>
+    <a href="https://ma-ue.github.io/post/ros%E3%81%BE%E3%81%A7%E3%81%AE%E3%81%BF%E3%81%A1%E3%81%AE%E3%82%8A/"><i class="fa fa-chevron-left"></i></a>
     
   </div>
   <div class="pure-u-10-24">
     
     <nav class="prev">
-      <a href="https://ma-ue.github.io/post/%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB/">はじめに</a>
+      <a href="https://ma-ue.github.io/post/ros%E3%81%BE%E3%81%A7%E3%81%AE%E3%81%BF%E3%81%A1%E3%81%AE%E3%82%8A/">ROSまでのみちのり</a>
     </nav>
     
   </div>
@@ -360,14 +333,8 @@ Website may be down.
   </div>
   <div class="pure-u-10-24">
     
-    <nav class="next">
-      <a href="https://ma-ue.github.io/post/hugo%E3%81%A7%E3%82%B5%E3%82%A4%E3%83%88%E3%82%92%E7%AB%8B%E3%81%A1%E4%B8%8A%E3%81%92%E3%82%8B/">Hugoでサイトを立ち上げる</a>
-    </nav>
-    
   </div>
   <div class="pure-u-1-24" style="text-align: right;">
-    
-    <a href="https://ma-ue.github.io/post/hugo%E3%81%A7%E3%82%B5%E3%82%A4%E3%83%88%E3%82%92%E7%AB%8B%E3%81%A1%E4%B8%8A%E3%81%92%E3%82%8B/"><i class="fa fa-chevron-right"></i></a>
     
   </div>
 </div>
